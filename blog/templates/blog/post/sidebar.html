@@ -1,0 +1,16 @@
+
+    <h2>My blog</h2>
+    <p>This is my blog.I have written {{ total_posts }} so far.</p>
+    <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS Feed</a></p>
+    <h2>Latest Post</h2>
+    <ul>
+        {% for l in latest_posts %}
+            <a href="{{ l.get_absolute_url }}"><li>{{ l.title }}</li></a>
+        {% endfor %}
+    </ul>
+    <h2>Most Commented Posts</h2>
+    <ul>
+        {% for m in most_comment %}
+            <a href="{{ m.get_absolute_url }}"><li>{{ m.title }}</li></a>
+        {% endfor %}
+    </ul>
